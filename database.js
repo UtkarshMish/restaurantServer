@@ -1,10 +1,7 @@
-const mongoose = require("mongoose");
-module.exports = mongoose.connect(
-  "mongodb+srv://utkarsh_mishra:ut@sH4545@cluster0-xby9y.mongodb.net/restaurantName?retryWrites=true",
-  { useNewUrlParser: true },
-  function(err, db) {
-    if (err) throw err;
-    console.log("Database connected!");
-    // db.close();
-  }
-);
+const mongoose = require('mongoose');
+const MONGO_KEY = require('./.env');
+module.exports = mongoose.connect(String(MONGO_KEY), { useNewUrlParser: true }, function(err) {
+  if (err) throw err;
+  console.log('Database connected!');
+  // db.close();
+});
